@@ -7,7 +7,6 @@
  * @return {Object[]}
  */
 function transformStateWithClones(state, actions) {
-  // write code here
   let currentState = structuredClone(state);
   const history = [];
 
@@ -21,6 +20,7 @@ function transformStateWithClones(state, actions) {
     } else if (action.type === 'clear') {
       currentState = {};
     }
+
     history.push(structuredClone(currentState));
   }
 
